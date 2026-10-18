@@ -1,0 +1,85 @@
+/**
+ * Site-specific overrides on top of the FlexStart template (style.css).
+ * Kept separate so the template file stays as archived.
+ */
+
+/* AOS "zoom-out" starts elements at scale(1.2), which made the page wider than
+   the screen on phones and hid the mobile menu button. Clip horizontal overflow. */
+html,
+body {
+  overflow-x: hidden;
+}
+@supports (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Services: columns are d-flex so every box in a row has the same height */
+.services .service-box {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .services .service-box {
+    padding: 50px 24px;
+  }
+  .services .service-box h3 {
+    font-size: 21px;
+  }
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 991px) {
+  .hero .hero-img {
+    margin-top: 30px;
+  }
+  .about .content {
+    padding: 30px;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 575px) {
+  .header .logo span {
+    font-size: 26px;
+  }
+  .hero {
+    padding: 100px 0 40px 0;
+  }
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+  .section-header h2 {
+    font-size: 13px;
+  }
+  .section-header p {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .about .content {
+    padding: 24px 16px;
+  }
+  .about .content h2 {
+    font-size: 22px;
+  }
+  .values .box,
+  .services .service-box {
+    padding: 30px 20px;
+  }
+  .contact .info-box {
+    padding: 24px 20px;
+  }
+  .footer .footer-top {
+    padding: 40px 0 20px 0;
+  }
+  .footer .footer-top .footer-links {
+    margin-bottom: 10px;
+  }
+}
