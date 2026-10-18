@@ -168,8 +168,8 @@
         en: ["e-shop", "eshop", "online store", "online shop", "shop", "store", "ecommerce", "e-commerce", "woocommerce", "sell online"]
       },
       answer: {
-        el: "Ναι! Κατασκευάζουμε ηλεκτρονικά καταστήματα με WordPress και WooCommerce: κατάλογο προϊόντων, καλάθι, πληρωμές και αποστολές, ώστε να ξεκινήσετε να πουλάτε online άμεσα.",
-        en: "Yes! We build online stores with WordPress and WooCommerce: product catalogue, cart, payments and shipping, so you can start selling online quickly."
+        el: "Ναι! Κατασκευάζουμε ολοκληρωμένα ηλεκτρονικά καταστήματα με WordPress και WooCommerce:\n• Κατάλογος προϊόντων με φίλτρα και αναζήτηση\n• Ασφαλείς online πληρωμές\n• Μεταφορικά και σύνδεση με courier\n• Διασύνδεση με ERP και λογιστικό πρόγραμμα\n• Εκπαίδευση για να το διαχειρίζεστε εύκολα μόνοι σας",
+        en: "Yes! We build complete online stores with WordPress and WooCommerce:\n• Product catalogue with filters and search\n• Secure online payments\n• Shipping rates and courier integration\n• Integration with your ERP and accounting software\n• Training so you can manage it easily yourself"
       },
       chips: { el: ["Πόσο κοστίζει;", "Κάνετε SEO;"], en: ["How much does it cost?", "Do you do SEO?"] }
     },
@@ -180,8 +180,8 @@
         en: ["seo", "marketing", "google", "promotion", "promote", "advertis", "ranking", "search engine", "traffic"]
       },
       answer: {
-        el: "Προσφέρουμε υπηρεσίες marketing και SEO optimization, ώστε να βελτιώσετε τη θέση και την εικόνα σας στο διαδίκτυο και να σας βρίσκουν περισσότεροι πελάτες στο Google.",
-        en: "We offer marketing and SEO optimisation services to improve your position and image online, so more customers can find you on Google."
+        el: "Βελτιώνουμε τη θέση και την εικόνα σας στο διαδίκτυο, ώστε να σας βρίσκουν περισσότεροι πελάτες:\n• Τεχνικό SEO και ταχύτητα σελίδων\n• Έρευνα λέξεων-κλειδιών και βελτιστοποίηση κειμένων\n• Google Business Profile για την τοπική αναζήτηση\n• Διαφημίσεις σε Google Ads και social media\n• Μετρήσεις και αναφορές με Google Analytics",
+        en: "We improve your position and image online so more customers can find you:\n• Technical SEO and page speed\n• Keyword research and content optimisation\n• Google Business Profile for local search\n• Google Ads and social media advertising\n• Tracking and reports with Google Analytics"
       }
     },
     {
@@ -213,8 +213,8 @@
         en: ["website", "web site", "site", "web page", "webpage", "app", "application", "mobile", "tablet", "responsive"]
       },
       answer: {
-        el: "Κατασκευάζουμε ιστοσελίδες και εφαρμογές που δουλεύουν άψογα σε κινητά, tablet και υπολογιστές: σύγχρονες, γρήγορες και προσαρμοσμένες στις ανάγκες της επιχείρησής σας.",
-        en: "We build websites and apps that work flawlessly on phones, tablets and computers: modern, fast and tailored to your business."
+        el: "Κατασκευάζουμε γρήγορες, ασφαλείς ιστοσελίδες και εφαρμογές που δείχνουν άψογα σε κινητά, tablet και υπολογιστές:\n• Εταιρικές ιστοσελίδες και landing pages\n• Web εφαρμογές και custom λογισμικό (.NET)\n• Εύκολη διαχείριση περιεχομένου με WordPress\n• Domain, φιλοξενία και πιστοποιητικό SSL",
+        en: "We build fast, secure websites and apps that look great on phones, tablets and computers:\n• Company websites and landing pages\n• Web apps and custom software (.NET)\n• Easy content management with WordPress\n• Domain, hosting and SSL certificate"
       },
       chips: { el: ["Πόσο κοστίζει μια ιστοσελίδα;", "Πόσο χρόνο χρειάζεται;"], en: ["How much does a website cost?", "How long does it take?"] }
     },

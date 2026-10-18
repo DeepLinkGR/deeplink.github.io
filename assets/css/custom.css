@@ -25,6 +25,42 @@ img {
 .services .service-box {
   width: 100%;
 }
+.services .service-box .service-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0 0;
+  text-align: left;
+  font-size: 15px;
+}
+.services .service-box .service-list li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 5px 0;
+  line-height: 1.45;
+  border-top: 1px dashed rgba(1, 41, 112, 0.1);
+}
+.services .service-box .service-list li:first-child {
+  border-top: 0;
+}
+.services .service-box .service-list i {
+  flex: none;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.services .service-box.blue .service-list i { color: #2db6fa; }
+.services .service-box.orange .service-list i { color: #f68c09; }
+.services .service-box.green .service-list i { color: #08da4e; }
+.services .service-box.purple .service-list i { color: #b50edf; }
+/* The template fills the box with its accent colour on hover */
+.services .service-box:hover .service-list,
+.services .service-box:hover .service-list i {
+  color: #fff;
+}
+.services .service-box:hover .service-list li {
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
 @media (min-width: 1200px) {
   .services .service-box {
     padding: 50px 24px;
