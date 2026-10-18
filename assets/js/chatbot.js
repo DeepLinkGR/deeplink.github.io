@@ -23,6 +23,20 @@
 
   const INTENTS = [
     {
+      // Easter egg: opens the Tetris overlay (assets/js/tetris.js, loaded on demand).
+      id: "game",
+      action: "tetris",
+      keywords: {
+        el: ["θελω να παιξω", "να παιξουμε", "παιξ", "παιχνιδ", "τετρισ", "tetris"],
+        en: ["play a game", "want to play", "lets play", "let s play", "play", "game", "tetris"]
+      },
+      answer: {
+        el: "🎮 Βρήκατε το μυστικό! Ας παίξουμε Tetris…",
+        en: "🎮 You found the secret! Let's play Tetris…"
+      },
+      chips: { el: ["▶ Παίξε Tetris"], en: ["▶ Play Tetris"] }
+    },
+    {
       id: "si",
       keywords: {
         el: ["si", "τι ειναι το si", "τι ειναι η si", "υπερνοημοσυν", "υπερ νοημοσυνη", "super intelligence", "superintelligence", "super inteligence"],
@@ -408,7 +422,7 @@
       if (s > bestScore) { best = intent; bestScore = s; }
     });
     if (!best) return { lang: lang, text: TEXT[lang].fallback, chips: TEXT[lang].chips.slice(0, 4) };
-    return { lang: lang, text: best.answer[lang], chips: best.chips ? best.chips[lang] : [] };
+    return { lang: lang, text: best.answer[lang], chips: best.chips ? best.chips[lang] : [], action: best.action };
   }
 
   /* ---------- State ---------- */
@@ -524,6 +538,33 @@
     push({ from: "bot", text: t().welcome, chips: t().chips });
   }
 
+  /* ---------- Easter egg: Tetris, loaded only when first requested ---------- */
+  let tetrisLoading = null;
+  function loadTetris() {
+    if (window.DeepLinkTetris) return Promise.resolve();
+    if (tetrisLoading) return tetrisLoading;
+    tetrisLoading = new Promise(function (resolve, reject) {
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "assets/css/tetris.css";
+      document.head.append(css);
+      const js = document.createElement("script");
+      js.src = "assets/js/tetris.js";
+      js.onload = function () { resolve(); };
+      js.onerror = function () { tetrisLoading = null; js.remove(); reject(new Error("tetris load failed")); };
+      document.head.append(js);
+    });
+    return tetrisLoading;
+  }
+
+  function launchTetris(lang) {
+    loadTetris().then(function () {
+      window.DeepLinkTetris.open({ lang: lang, onClose: function () { if (!panel.hidden) input.focus(); } });
+    }).catch(function () {
+      push({ from: "bot", text: lang === "en" ? "Sorry, the game couldn't load right now. 😕" : "Δυστυχώς το παιχνίδι δεν φόρτωσε αυτή τη στιγμή. 😕" });
+    });
+  }
+
   let busy = false;
   function send(text) {
     text = (text || "").trim();
@@ -542,6 +583,7 @@
       typing.remove();
       push({ from: "bot", text: answer.text, chips: answer.chips });
       busy = false;
+      if (answer.action === "tetris") launchTetris(answer.lang);
     }, 600 + Math.random() * 300);
   }
 

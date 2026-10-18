@@ -15,6 +15,8 @@ Changes from the archived version:
 - Added an AI solutions service, mobile/tablet layout fixes (`assets/css/custom.css`) and a static
   bilingual FAQ chatbot (`assets/js/chatbot.js`, `assets/css/chatbot.css`). The chatbot runs entirely
   in the browser: answers are canned and matched by keywords, and nothing is sent anywhere.
+- Easter egg: typing "I want to play a game" (or "θέλω να παίξω", "tetris", …) in the chatbot opens a
+  Tetris game (`assets/js/tetris.js`, `assets/css/tetris.css`), loaded only when triggered.
 
 ## Local preview
 

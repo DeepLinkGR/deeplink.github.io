@@ -1,0 +1,266 @@
+/**
+ * Tetris easter egg overlay (markup built by assets/js/tetris.js, loaded on demand).
+ */
+.dlt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(1, 21, 64, 0.72);
+  font-family: "Nunito", "Open Sans", sans-serif;
+}
+.dlt-overlay[hidden],
+.dlt-msg[hidden],
+.dlt-msg-sub[hidden] {
+  display: none;
+}
+
+.dlt-window {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  max-width: 100%;
+  animation: dlt-in 0.2s ease-out;
+}
+@keyframes dlt-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+.dlt-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 10px 10px 18px;
+  background: #012970;
+  color: #fff;
+}
+.dlt-header strong {
+  flex: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+.dlt-icon-btn {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.dlt-icon-btn:hover,
+.dlt-icon-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+
+.dlt-body {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  justify-content: center;
+}
+.dlt-board-wrap {
+  position: relative;
+  line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  outline: none;
+  flex: none;
+}
+.dlt-board {
+  display: block;
+  touch-action: none;
+}
+
+.dlt-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  text-align: center;
+  line-height: 1.4;
+  background: rgba(11, 26, 74, 0.82);
+  color: #fff;
+}
+.dlt-msg-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+}
+.dlt-msg-sub {
+  font-size: 15px;
+  opacity: 0.9;
+}
+.dlt-msg-btn {
+  margin-top: 6px;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 26px;
+  background: #4154f1;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(65, 84, 241, 0.5);
+}
+.dlt-msg-btn:hover,
+.dlt-msg-btn:focus-visible {
+  background: #5969f3;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.dlt-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 110px;
+}
+.dlt-stat {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f6f9ff;
+  border: 1px solid #e3e8f7;
+}
+.dlt-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #4154f1;
+}
+.dlt-stat-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #012970;
+  font-variant-numeric: tabular-nums;
+}
+.dlt-next-canvas {
+  display: block;
+  margin: 6px auto 0;
+}
+
+.dlt-controls {
+  display: none;
+  gap: 8px;
+  justify-content: center;
+  padding: 0 16px 16px;
+}
+.dlt-ctl {
+  width: 56px;
+  height: 52px;
+  border: 0;
+  border-radius: 12px;
+  background: #eef1fe;
+  color: #012970;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.dlt-ctl:active {
+  background: #4154f1;
+  color: #fff;
+}
+.dlt-ctl-drop {
+  background: #4154f1;
+  color: #fff;
+}
+
+.dlt-help {
+  margin: 0;
+  padding: 0 16px 14px;
+  font-size: 13px;
+  color: #6c7a9c;
+  text-align: center;
+}
+
+/* Touch devices get on-screen buttons instead of the keyboard hint */
+@media (hover: none), (pointer: coarse) {
+  .dlt-controls { display: flex; }
+  .dlt-help { display: none; }
+}
+
+/* Phones: full-screen, stats in a row above the board */
+@media (max-width: 575px) {
+  .dlt-overlay {
+    padding: 0;
+    align-items: stretch;
+  }
+  .dlt-window {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .dlt-header {
+    padding-top: calc(10px + env(safe-area-inset-top, 0px));
+  }
+  .dlt-body {
+    flex: 1;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 16px;
+    min-height: 0;
+  }
+  .dlt-side {
+    flex-direction: row;
+    width: 100%;
+    gap: 6px;
+  }
+  .dlt-stat {
+    flex: 1;
+    min-width: 0;
+    padding: 5px 6px;
+    align-items: center;
+  }
+  .dlt-stat-label { font-size: 9.5px; }
+  .dlt-stat-value { font-size: 16px; }
+  .dlt-next { flex: 0 0 auto; }
+  .dlt-next .dlt-stat-label { display: none; }
+  .dlt-next-canvas {
+    margin: 0;
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .dlt-controls {
+    display: flex;
+    padding: 4px 12px 12px;
+  }
+  .dlt-ctl {
+    flex: 1;
+    max-width: 70px;
+    height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dlt-window { animation: none; }
+}
