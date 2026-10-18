@@ -16,11 +16,24 @@
    */
   const AI_TERMS = [
     "ai", "a.i.", "τεχνητη νοημοσυνη", "νοημοσυν", "artificial", "chatgpt", "gpt", "llm", "openai", "claude",
-    "gemini", "copilot", "machine learning", "μηχανικη μαθηση", "αυτοματ", "automat", "chatbot"
+    "gemini", "copilot", "machine learning", "μηχανικη μαθηση", "αυτοματ", "automat", "chatbot",
+    "si", "super intelligence", "superintelligence", "super inteligence", "υπερνοημοσυν", "υπερ νοημοσυνη"
   ];
   const withAI = function (list) { return AI_TERMS.concat(list); };
 
   const INTENTS = [
+    {
+      id: "si",
+      keywords: {
+        el: ["si", "τι ειναι το si", "τι ειναι η si", "υπερνοημοσυν", "υπερ νοημοσυνη", "super intelligence", "superintelligence", "super inteligence"],
+        en: ["si", "what is si", "super intelligence", "superintelligence", "super inteligence", "asi"]
+      },
+      answer: {
+        el: "Η SI (Super Intelligence, υπερνοημοσύνη) είναι το επόμενο στάδιο μετά το σημερινό AI: συστήματα που θα ξεπερνούν τον άνθρωπο σε σχεδόν κάθε γνωστική εργασία. Δεν υπάρχει ακόμη, αλλά τα μοντέλα AI βελτιώνονται με ραγδαίους ρυθμούς.\nΠαρακολουθούμε στενά τις εξελίξεις και χτίζουμε λύσεις AI που αναβαθμίζονται εύκολα σε νεότερα, πιο ικανά μοντέλα, ώστε η επιχείρησή σας να είναι έτοιμη για ό,τι έρχεται.",
+        en: "SI (Super Intelligence) is the next stage after today's AI: systems that will outperform humans at almost every cognitive task. It doesn't exist yet, but AI models are improving at a remarkable pace.\nWe follow these developments closely and build AI solutions that can easily be upgraded to newer, more capable models, so your business is ready for what's coming."
+      },
+      chips: { el: ["Πώς βοηθά το AI την επιχείρησή μου;", "Πώς ξεκινάμε με AI;"], en: ["How can AI help my business?", "How do we start with AI?"] }
+    },
     {
       id: "ai",
       keywords: {
@@ -225,8 +238,8 @@
         en: ["service", "what do you do", "what do you offer", "offer", "solutions", "help me with"]
       },
       answer: {
-        el: "Η DeepLink προσφέρει:\n• Κατασκευή ιστοσελίδων και εφαρμογών\n• Κατασκευή e-shop\n• Υπηρεσίες marketing και SEO\n• Λύσεις τεχνητής νοημοσύνης (AI) για μείωση κόστους και πιο αποδοτική δουλειά\n• Κατοχύρωση domain και φιλοξενία",
-        en: "DeepLink offers:\n• Website and app development\n• E-shop development\n• Marketing and SEO services\n• AI solutions to cut costs and work more efficiently\n• Domain registration and hosting"
+        el: "Η DeepLink προσφέρει:\n• Κατασκευή ιστοσελίδων και εφαρμογών\n• Κατασκευή e-shop\n• Υπηρεσίες marketing και SEO\n• Λύσεις τεχνητής νοημοσύνης (AI & SI) για μείωση κόστους και πιο αποδοτική δουλειά\n• Κατοχύρωση domain και φιλοξενία",
+        en: "DeepLink offers:\n• Website and app development\n• E-shop development\n• Marketing and SEO services\n• AI & SI solutions to cut costs and work more efficiently\n• Domain registration and hosting"
       },
       chips: { el: ["Πώς βοηθά το AI την επιχείρησή μου;", "Φτιάχνετε e-shop;", "Κάνετε SEO;"], en: ["How can AI help my business?", "Do you build e-shops?", "Do you do SEO?"] }
     },
